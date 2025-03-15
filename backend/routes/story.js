@@ -4,19 +4,21 @@ const { verifyToken } = require("../utils/token");
 const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
+const cloudinary = require("cloudinary").v2;
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
-const uploadDir = path.join(__dirname, "uploads");
+cloudinary.config({ 
+  cloud_name: 'dlwmbtvfg', 
+  api_key: '546235123575755', 
+  api_secret: 'VtFDj8zbovkdgktcew20hXXvOzQ'
+});
 
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
-}
-
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, uploadDir);
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname);
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: "veebo_uploads",
+    format: async (req, file) => "png",
+    public_id: (req, file) => Date.now() + "-" + file.originalname,
   },
 });
 

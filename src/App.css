@@ -75,7 +75,7 @@
 }
 
 .bg-login {
-    background-image: url("/assets/images/child.png");
+    background-image: url("/assets/images/login.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }

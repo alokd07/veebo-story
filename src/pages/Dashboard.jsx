@@ -39,6 +39,19 @@ export default function Dashboard({ open, setOpen }) {
       .catch((err) => console.log(err));
   };
 
+  const deleteStory = (id) => {
+    fetch(`${BASE_URL}story/delete/${id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${Cookies.get("token")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => toast.success(data.message))
+      .then(() => fetchStories())
+      .catch((err) => console.log(err));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -352,26 +365,15 @@ export default function Dashboard({ open, setOpen }) {
                           </div>
                           <div className="flex flex-shrink-0 self-center">
                             <div
-                              x-data="Components.menu({ open: false })"
-                              x-init="init()"
                               className="relative inline-block text-left"
                             >
                               <div>
                                 <button
+                                onClick={() => {deleteStory(story._id)}}
                                   type="button"
-                                  className="-m-2 flex items-center rounded-full p-2 text-gray-400 hover:text-gray-600"
-                                  id="options-menu-0-button"
+                                  className="-m-2 flex items-center rounded-full p-2 text-sm text-red-400 hover:text-red-600 cursor-pointer"
                                 >
-                                  <svg
-                                    className="h-5 w-5"
-                                    x-description="Heroicon name: mini/ellipsis-vertical"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 20 20"
-                                    fill="currentColor"
-                                    aria-hidden="true"
-                                  >
-                                    <path d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM11.5 15.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z" />
-                                  </svg>
+                                  Delete
                                 </button>
                               </div>
                             </div>
