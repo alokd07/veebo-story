@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Righteous&display=swap');
+
+@theme {
+    --color-primary: #9C29B2;
+    --color-secondary: #FFC909;
+    --color-primary-bold: #550964;
+    --color-btn: #710A85;
+    --color-btn-hover: #9C29B2;
+    --color-background: #710A85;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+ol,
+li,
+blockquote,
+pre,
+code,
+hr,
+table,
+thead,
+tbody,
+tfoot,
+tr,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.text-outline {
+    text-shadow:
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;
+}

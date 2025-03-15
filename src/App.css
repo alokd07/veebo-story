@@ -1,0 +1,81 @@
+.main {
+    background-image: url("/assets/images/Rectangle 6.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("/assets/images/Rectangle 7.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    margin-top: 10px;
+    height: 100vh;
+}
+
+@media screen and (min-width: 2500px) {
+    .main {
+        background-image: url("/assets/images/Rectangle 6.svg");
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 50vh;
+    }
+    
+    .main::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("/assets/images/Rectangle 7.svg");
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1;
+        margin-top: 10px;
+        height: 50vh;
+    }
+}
+
+.item-background {
+    background-image: linear-gradient(#ffffff, #FFF0E5);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+}
+
+
+.pricing-background {
+    background-image: linear-gradient(#ffffff, #E8CDED);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+}
+
+
+.touch-background {
+    background-image: url("/assets/images/Rectangle 19.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.bg-login {
+    background-image: url("/assets/images/child.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
