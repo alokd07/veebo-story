@@ -53,6 +53,7 @@ export default function Navbar({ setModalOpen }) {
 
 function AdminHeader({ setModalOpen }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [show, setShow] = React.useState(false);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -68,7 +69,7 @@ function AdminHeader({ setModalOpen }) {
             <div className="flex flex-shrink-0 items-center">
               <Link to="/admin">
                 <img
-                  className="block h-8 scale-[3] ml-6"
+                  className="block h-8 w-24 scale-[3] ml-6"
                   src="./assets/images/Frame 7.svg"
                   alt="veebo"
                 />
@@ -110,6 +111,7 @@ function AdminHeader({ setModalOpen }) {
           </div>
           <div className="flex items-center md:absolute md:inset-y-0 md:right-0 lg:hidden">
             <button
+              onClick={()=>setShow(!show)}
               type="button"
               className="-mx-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-rose-500"
             >
@@ -220,6 +222,7 @@ function AdminHeader({ setModalOpen }) {
           </div>
         </div>
       </div>
+      {show && (
       <nav className="lg:hidden">
         <div className="mx-auto max-w-3xl space-y-1 px-2 pt-2 pb-3 sm:px-4">
           <a
@@ -326,6 +329,7 @@ function AdminHeader({ setModalOpen }) {
           </div>
         </div>
       </nav>
+      )}
     </header>
   );
 }
