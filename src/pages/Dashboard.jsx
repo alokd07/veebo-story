@@ -101,6 +101,7 @@ export default function Dashboard({ open, setOpen }) {
                 top: "50%",
                 left: "50%",
                 maxHeight: "90vh",
+                height: "auto",
                 overflowY: "auto",
                 transform: "translate(-50%, -50%)",
               }}
